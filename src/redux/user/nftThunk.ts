@@ -6,7 +6,7 @@ import { setArsenal, setFighters, setPacks, setPackTemplateList } from "./userSl
 import { TemplateApi } from "../../api/template.api";
 import data from "../../data.json";
 import { retrieveAssetsThunk } from "./assetsThunk";
-import arsenal from "../../pages/Arsenal/Arsenal";
+// import arsenal from "../../pages/Arsenal/Arsenal";
 
 export const addBackTokenThunk =
  (backTokenAmount: number, assetID: string): AppThunk => {
@@ -173,7 +173,7 @@ export const openPackThunk =
 			 const testAssets = await AssetsApi.getAssets(userData.accountName, data.testCollectionName)
 
 			 const newUnStakedList = [...capComAssets, ...testAssets]
-			 if (newUnStakedList.filter((item) => (item.asset_id == assetId)).length === 0) {
+			 if (newUnStakedList.filter((item) => (item.asset_id === assetId)).length === 0) {
 				 const arsenalNameFilter = ['actions']
 				 const fightersNameFilter = ['series1', 'promo']
 				 const packsNameFilter = ['packs', 'pasks']
@@ -270,11 +270,11 @@ export const buyDropThunk =
  (drop: any, itemsCount: number): AppThunk => {
 	 return async (dispatch, getState) => {
 		 const userData = getState().user.userData
-		 const packs = getState().user.packs
-		 const arsenal = getState().user.arsenal
-		 const fighters = getState().user.fighters
+		 // const packs = getState().user.packs
+		 // const arsenal = getState().user.arsenal
+		 // const fighters = getState().user.fighters
 
-		 const oldUnStakedList = [...packs, ...arsenal, ...fighters]
+		 // const oldUnStakedList = [...packs, ...arsenal, ...fighters]
 
 		 const actions = [{
 			 "account": "atomicdropsx",

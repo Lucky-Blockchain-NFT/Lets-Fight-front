@@ -81,7 +81,7 @@ const Header = () => {
     }
   };
 
-  // console.log(isLoggedIn)
+  console.log(selectCity)
 
   return (
     <Box className = "Navbar" sx={{ flexGrow: 1 }} style={{ position: "sticky", top: 0, zIndex: "100" }}>
@@ -124,7 +124,7 @@ const Header = () => {
              dismissHandler(e)
             }
            >
-             {(userAccount.nickname == "" ? userAccount.accountName : userAccount.nickname)}
+             {(userAccount.nickname === "" ? userAccount.accountName : userAccount.nickname)}
              {showDropDown && (
               <DropDown
                cities={cities()}

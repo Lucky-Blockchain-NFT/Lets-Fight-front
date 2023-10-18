@@ -6,7 +6,7 @@ import { getDropsThunk } from "../../redux/user/dropsThunk";
 import { RootState } from "../../redux/store";
 import Typography from "@mui/material/Typography";
 import moment from "moment";
-import { buyDropThunk, openPackThunk } from "../../redux/user/nftThunk";
+import { buyDropThunk} from "../../redux/user/nftThunk";
 import { btnStyle } from "../../components/PackCard/PackCard";
 import { CssTextField } from "../WalletManager/WalletManager";
 
@@ -21,6 +21,7 @@ export const Dashboard = () => {
 
   useEffect(() => {
     dispatch(getDropsThunk())
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
@@ -28,17 +29,17 @@ export const Dashboard = () => {
 
       <section className={styles.section}>
         <div className={styles.mainbg}>
-          <img src="/image/main_image.png"/>
+          <img src="/image/main_image.png" alt={""}/>
         </div>
         <div className={styles.effects}>
           <div>
-            <img src="/image/left_main.png"/>
+            <img src="/image/left_main.png" alt={""}/>
           </div>
           <div className={styles.btn_confirm}>
             <Button >&nbsp;</Button>
           </div>
           <div>
-            <img src="/image/right_main.png"/>
+            <img src="/image/right_main.png" alt={""}/>
           </div>
         </div>
       </section>

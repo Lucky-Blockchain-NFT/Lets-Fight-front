@@ -4,7 +4,7 @@ import AnchorLink from 'anchor-link';
 import AnchorLinkBrowserTransport from 'anchor-link-browser-transport';
 import * as waxjs from '@waxio/waxjs/dist';
 import mainData from '../../data.json';
-import { LoginStatusType, UserDataType, WalletEnum } from '../types';
+import { LoginStatusType, WalletEnum } from '../types';
 import { LoginApi } from '../../api/login.api';
 
 export const loginThunk = (
@@ -109,7 +109,7 @@ export const setNewUserThunk = (
   return async (dispatch, getState) => {
     LoginApi.setNewUser(accountName, emailAddress, nickname).then(
       async (result) => {
-        if (result.status == 200) {
+        if (result.status === 200) {
           await LoginApi.sendEmail(accountName, emailAddress, nickname);
         }
       }
@@ -120,7 +120,7 @@ export const setNewUserThunk = (
 export const confirmEmailThunk = (accountName: string): AppThunk => {
   return async (dispatch, getState) => {
     LoginApi.confirmEmail(accountName).then((result) => {
-      if (result.status != 200) {
+      if (result.status !== 200) {
         console.log('User already exist!');
       }
     });

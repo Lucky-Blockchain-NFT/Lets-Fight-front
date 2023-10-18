@@ -12,7 +12,7 @@ import MenuItem from '@mui/material/MenuItem';
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import { filterFighters } from "../helpers";
-import NFTPackCard, { btnStyle } from "../../components/PackCard/PackCard";
+import  { btnStyle } from "../../components/PackCard/PackCard";
 import { retrieveAssetsThunk } from "../../redux/user/assetsThunk";
 import { RetrieveType } from "../../redux/types";
 
@@ -66,12 +66,14 @@ export const Fighters = () => {
     if (userData.accountName) {
       dispatch(retrieveAssetsThunk(RetrieveType.fighters))
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   let uriPrefix = "https://dweb.link/ipfs/";
 
   useEffect(() => {
     setShowNFTs(unStakedList.filter((item: any) => item.schema.schema_name === filterData[0].data[0]));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [unStakedList, unStakedList.length]);
 
   const handleChange = (event: any, index: any) => {

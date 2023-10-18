@@ -4,16 +4,16 @@ import { Button, TextField } from '@mui/material';
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
-import { WalletEnum } from "../../redux/types";
-import { setIsLoggedIn } from "../../redux/user/userSlice";
+// import { WalletEnum } from "../../redux/types";
+// import { setIsLoggedIn } from "../../redux/user/userSlice";
 
 export interface ProfilePropsType {
 
 }
 
-export const Profile: FC<ProfilePropsType> = ({ }) => {
-  const navigate = useNavigate()
-  const dispatch = useDispatch()
+export const Profile: FC<ProfilePropsType> = () => {
+  // const navigate = useNavigate()
+  // const dispatch = useDispatch()
   const userAccount = useSelector((state: RootState) => state.user.userData)
   let nick = userAccount.nickname
 
@@ -40,7 +40,7 @@ export const Profile: FC<ProfilePropsType> = ({ }) => {
 
         <div className={styles.profile_contents}>
           <div className={styles.profile_avatar}>
-            <img src = "/image/profile.svg"/>
+            <img src = "/image/profile.svg" alt={""}/>
           </div>
           <div className={styles.profile_text}>
             <div>

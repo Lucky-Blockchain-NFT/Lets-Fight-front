@@ -6,7 +6,7 @@ import { LoginStatusType, WalletEnum } from '../../redux/types';
 import { useNavigate } from 'react-router-dom';
 import { RootState } from '../../redux/store';
 import { useForm, Controller } from 'react-hook-form';
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import FormControlLabel from '@mui/material/FormControlLabel';
 
 import { styled } from '@mui/material/styles';
@@ -109,6 +109,7 @@ const errorText = {
 export const WalletManager = () => {
   const [firstCheckBox, setFirstCheckBox] = useState(false);
   const [secondCheckBox, setSecondCheckBox] = useState(false);
+  const [forceRerender, setForceRerender] = useState(false);
 
   const navigate = useNavigate();
   const [showModal, changeShowModal] = useState(true);
@@ -173,6 +174,12 @@ export const WalletManager = () => {
   // console.log(LoginStatusType.authorized, 'LoginStatusType.authorized')
   // console.log(showModal, 'showModal')
   // console.log(userData, 'userData')
+
+  useEffect(() => {
+    // Trigger a re-render when userLoginStatus changes
+    setForceRerender(!forceRerender);
+    console.log(userLoginStatus)
+  }, [userLoginStatus]);
 
   return (
     <main className={styles.main}>

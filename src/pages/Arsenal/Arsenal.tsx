@@ -5,14 +5,15 @@ import Checkbox from '@mui/material/Checkbox';
 import { Grid, Box, Button } from '@mui/material';
 
 import FormControl from '@mui/material/FormControl';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+import Select from '@mui/material/Select';
 
 import NFTCard from "../../components/NFTCard";
 import MenuItem from '@mui/material/MenuItem';
 import { useDispatch, useSelector } from "react-redux";
 import { retrieveAssetsThunk } from "../../redux/user/assetsThunk";
 import { RootState } from "../../redux/store";
-import { filterArsenal, filterFighters } from "../helpers";
+// import { filterArsenal, filterFighters } from "../helpers";
+import { filterArsenal } from "../helpers";
 import { btnStyle } from "../../components/PackCard/PackCard";
 import { RetrieveType } from "../../redux/types";
 
@@ -68,6 +69,7 @@ const Arsenal = () => {
     if (userData.accountName) {
       dispatch(retrieveAssetsThunk(RetrieveType.arsenal))
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   let uriPrefix = "https://dweb.link/ipfs/";
@@ -77,6 +79,7 @@ const Arsenal = () => {
     const newList = unStakedList.filter((item: any) => ['actions'].includes(item.schema.schema_name || ''))
     setShowNFTs(newList);
     console.log(showNFTs)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [unStakedList, unStakedList.length]);
 
   const handleChange = (event: any, index: any) => {
@@ -90,8 +93,6 @@ const Arsenal = () => {
 
     setShowNFTs(newList);
   };
-
-
 
 
   return (

@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import styles from "./Registeration.module.scss";
-import { Button, TextField, FormLabel, Checkbox, FormControlLabel, FormGroup } from '@mui/material'; 
+import { Button, TextField, Checkbox, FormControlLabel, FormGroup } from '@mui/material';
 
 export const Registration = () => {
   
@@ -15,7 +15,7 @@ export const Registration = () => {
   }
 
   const onSubmit = (e:any) => {
-    if(currentCheck != 3)
+    if(currentCheck !== 3)
       alert( "check terms and conditions" );
   }
 

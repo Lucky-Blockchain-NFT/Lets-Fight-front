@@ -59,7 +59,7 @@ const NFTCard = ({ uri, name, assetID, backed_tokens, powerScore }: URIProp) => 
   const [itemBackTokens, setItemBackTokens] = useState(0);
 
   useEffect(() => {
-    if (backed_tokens.length != 0) {
+    if (backed_tokens.length !== 0) {
       const backItem = backed_tokens.find((item: any) => item.token_symbol === 'WAX')
       let tmp = parseInt(backItem.amount) / 100000000;
       tmp = Math.floor(tmp * 100) / 100;

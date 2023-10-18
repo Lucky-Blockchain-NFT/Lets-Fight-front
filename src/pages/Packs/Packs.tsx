@@ -33,11 +33,13 @@ const PacksPage = () => {
 			dispatch(retrieveAssetsThunk(RetrieveType.packs))
 			dispatch(getTemplatesThunk())
 		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [])
 
 
 	useEffect(() => {
 		setShowPack(unStakedList);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [unStakedList, unStakedList.length]);
 
 
@@ -96,7 +98,7 @@ const PacksPage = () => {
 									<PackGroupCard
 									 uri={item.imgLink}
 									 name={item.template_name}
-									 userTemplateMints={unStakedList.filter((userItem: any) => item.template_id == userItem.template.template_id).map((userItem: any) => {
+									 userTemplateMints={unStakedList.filter((userItem: any) => item.template_id === userItem.template.template_id).map((userItem: any) => {
 										 return {
 											 assetId: userItem.asset_id,
 											 mintId: userItem.template_mint

@@ -1,8 +1,8 @@
 import axios from 'axios'
-import { ExplorerApi } from 'atomicassets'
+// import { ExplorerApi } from 'atomicassets'
 import data from '../data.json'
-import { PackTemplateType } from "../redux/types";
-import { ITemplate } from "atomicassets/build/API/Explorer/Objects";
+// import { PackTemplateType } from "../redux/types";
+// import { ITemplate } from "atomicassets/build/API/Explorer/Objects";
 
 
 export const DropsApi = {

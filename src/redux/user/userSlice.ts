@@ -59,6 +59,7 @@ export const userSlice = createSlice({
         },
         setUserLoginStatusData: (state: UserState, action: PayloadAction<any>) => {
             state.userLoginStatus = action.payload
+            console.log(state.userLoginStatus)
         }
     }
 })

@@ -1,4 +1,4 @@
-import axios from 'axios'
+// import axios from 'axios'
 import { ExplorerApi } from 'atomicassets'
 import data from '../data.json'
 import { PackTemplateType } from "../redux/types";

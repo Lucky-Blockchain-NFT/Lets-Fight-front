@@ -2,10 +2,11 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import "../NFTCard/card.css"
 import Button from '@mui/material/Button';
-import { FormLabel, Box, Grid } from '@mui/material';
+import {  Box, Grid } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import { useDispatch } from "react-redux";
-import { burnNftThunk, openPackThunk } from "../../redux/user/nftThunk";
+// import { burnNftThunk, openPackThunk } from "../../redux/user/nftThunk";
+import { openPackThunk } from "../../redux/user/nftThunk";
 
 export const box_style = {
 	display: "flex",
