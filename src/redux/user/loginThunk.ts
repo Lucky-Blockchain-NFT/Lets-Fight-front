@@ -57,42 +57,47 @@ export const loginThunk = (
     await newUserData.waxSession.rpc
       .get_currency_balance('eosio.token', newUserData.accountName, 'wax')
       .then((result: any) => {
-        console.log(result)
+        // console.log(result)
         newUserData.balance = result[0];
-        console.log(newUserData)
+        // console.log(newUserData)
         navigate('/');
         dispatch(setUserData(newUserData));
         // console.log(userData)
         return true;
       });
 
-    // dispatch(setNewUserThunk(data.wallet, data.email, data.nickname));
 
-    // LoginApi.getUser(newUserData.accountName).then((result: any) => {
-    //   console.log(newUserData);
-    //   console.log(result);
-    //   switch (result.status) {
-    //     case 404: {
-    //       dispatch(setUserLoginStatusData(LoginStatusType.new));
-    //       dispatch(setUserData(newUserData));
-    //       break;
-    //     }
-    //     case 403: {
-    //       dispatch(setUserLoginStatusData(LoginStatusType.notAuthorized));
-    //       newUserData.nickname = result.data.nickname;
-    //       newUserData.email = result.data.email;
-    //       dispatch(setUserData(newUserData));
-    //       break;
-    //     }
-    //     case 200: {
-    //       newUserData = { ...newUserData, nickname: result.data.nickname };
-    //       newUserData.email = result.data.email;
-    //       navigate('/');
-    //       dispatch(setUserData(newUserData));
-    //       break;
-    //     }
-    //   }
-    // });
+    LoginApi.getUser(newUserData.accountName).then((result: any) => {
+      console.log(newUserData);
+      console.log(result);
+      if(result === undefined){
+
+        dispatch(setUserLoginStatusData(LoginStatusType.new));
+        dispatch(setUserData(newUserData));
+
+      }
+      switch (result?.status) {
+        case 404: {
+          dispatch(setUserLoginStatusData(LoginStatusType.new));
+          dispatch(setUserData(newUserData));
+          break;
+        }
+        case 403: {
+          dispatch(setUserLoginStatusData(LoginStatusType.notAuthorized));
+          newUserData.nickname = result.data.nickname;
+          newUserData.email = result.data.email;
+          dispatch(setUserData(newUserData));
+          break;
+        }
+        case 200: {
+          newUserData = { ...newUserData, nickname: result.data.nickname };
+          newUserData.email = result.data.email;
+          navigate('/');
+          dispatch(setUserData(newUserData));
+          break;
+        }
+      }
+    });
   };
 };
 

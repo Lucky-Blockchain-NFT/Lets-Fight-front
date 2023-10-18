@@ -170,10 +170,9 @@ export const WalletManager = () => {
       showModal &&
       userData?.accountName)
   console.log(userLoginStatus, 'userLoginStatus')
-  console.log(LoginStatusType.authorized, 'LoginStatusType.authorized')
-  console.log(LoginStatusType.authorized, 'LoginStatusType.authorized')
-  console.log(showModal, 'showModal')
-  console.log(userData, 'userData')
+  // console.log(LoginStatusType.authorized, 'LoginStatusType.authorized')
+  // console.log(showModal, 'showModal')
+  // console.log(userData, 'userData')
 
   return (
     <main className={styles.main}>
