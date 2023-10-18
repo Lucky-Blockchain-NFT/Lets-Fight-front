@@ -1,0 +1,9 @@
+  // "customApiEndpoint": "https://lucky-backend.vercel.app"
+
+  "no-unused-vars": [
+        0,
+        {
+          "vars": "all",
+          "ignoreRestSiblings": true
+        }
+      ],

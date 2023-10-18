@@ -1,0 +1,14 @@
+{
+  "capComCollectionName": "stf.capcom",
+  "testCollectionName": "testopenpack",
+  "soldierSchemaName": "soldiers",
+  "endpoint": "https://wax.greymass.com",
+  "identifier": "Crowd",
+  "anchorChainId": "1064487b3cd1a897ce03ae5b6a865651747e2e152090f99c1d19d44e01aea5a4",
+  "anchorEndpoint": "https://wax.greymass.com",
+  "apiEndPointUrl": "https://wax.api.atomicassets.io",
+  "promoPacksCapCom": "209819",
+  "apiGetTableRowsUrl": "/v1/chain/get_table_rows",
+  "apiWaxSweden": "https://api.waxsweden.org",
+  "customApiEndpoint": "https://lucky-backend.vercel.app"
+}
