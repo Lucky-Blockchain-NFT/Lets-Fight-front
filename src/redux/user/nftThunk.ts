@@ -273,7 +273,6 @@ export const buyDropThunk =
 		 // const packs = getState().user.packs
 		 // const arsenal = getState().user.arsenal
 		 // const fighters = getState().user.fighters
-
 		 // const oldUnStakedList = [...packs, ...arsenal, ...fighters]
 
 		 const actions = [{
