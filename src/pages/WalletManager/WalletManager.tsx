@@ -143,11 +143,11 @@ export const WalletManager = () => {
     // debugger;
     dispatch(setNewUserThunk(data.wallet, data.email, data.nickname));
     changeRequestSend(true);
-    setTimeout(() => {
-      changeShowModal(false);
-      changeRequestSend(false);
-      window.location.reload();
-    }, 2500);
+    // setTimeout(() => {
+    //   changeShowModal(false);
+    //   changeRequestSend(false);
+    //   window.location.reload();
+    // }, 2500);
   };
 
   const cancelModalHandler = () => {
@@ -183,7 +183,8 @@ export const WalletManager = () => {
 
   return (
     <main className={styles.main}>
-      {userLoginStatus !== LoginStatusType.authorized &&
+      {
+        userLoginStatus !== LoginStatusType.authorized &&
         userLoginStatus !== null &&
         showModal &&
         userData?.accountName &&

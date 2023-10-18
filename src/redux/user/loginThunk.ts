@@ -60,11 +60,17 @@ export const loginThunk = (
         // console.log(result)
         newUserData.balance = result[0];
         // console.log(newUserData)
-        navigate('/');
+        // navigate('/');
         dispatch(setUserData(newUserData));
         // console.log(userData)
+        dispatch(setUserLoginStatusData(LoginStatusType.new));
+        dispatch(setUserData(newUserData));
         return true;
       });
+
+      dispatch(setUserLoginStatusData(LoginStatusType.new));
+      dispatch(setUserData(newUserData));
+
 
 
     LoginApi.getUser(newUserData.accountName).then((result: any) => {
